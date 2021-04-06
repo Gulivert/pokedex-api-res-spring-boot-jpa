@@ -1,12 +1,12 @@
 version: '3'
 
 services:
-  pokedex-mysql:
+  pokedex-mysql-ggarcia:
     image: mysql:5.7
     container_name: pokedex-mysql
     restart: always
     ports:
-      - 3306:3306
+      - 3506:3306
     environment:
       - MYSQL_ROOT_PASSWORD=example
       - MYSQL_DATABASE=test
@@ -24,10 +24,10 @@ services:
     depends_on:
       - pokedex-mysql
     ports:
-      - 8080:8484
+      - 8484:8080
     environment:
       #- "SPRING_PROFILES_ACTIVE=default"
-      #- SPRING_DATASOURCE_URL=jdbc:mysql://pokedex-mysql:3306/test
+      #- SPRING_DATASOURCE_URL=jdbc:mysql://pokedex-mysql:3506/test
       #- SPRING_DATASOURCE_USERNAME=root
       #- SPRING_DATASOURCE_PASSWORD=example
       #- SPRING_DATASOURCE_DRIVER_CLASS_NAME=com.mysql.jdbc.Driver
@@ -39,6 +39,6 @@ services:
       #- DATABASE_USER=root
       #- DATABASE_PASSWORD=example
       #- DATABASE_NAME=test
-      #- DATABASE_PORT=3306
+      #- DATABASE_PORT=3506
       #- DEBUG=true
       - SPRING_PROFILES_ACTIVE=docker
