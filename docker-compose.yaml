@@ -13,7 +13,7 @@ services:
       - MYSQL_USER=app
       - MYSQL_PASSWORD=root
       #- MYSQL_ROOT_HOST= '%'
-  pokedex:
+  pokedex-ggarcia:
     container_name: pokedex-api-rest
     restart: always
     image: pepesan/pokedex-microservice:latest
@@ -24,7 +24,7 @@ services:
     depends_on:
       - pokedex-mysql
     ports:
-      - 8080:8080
+      - 8080:8484
     environment:
       #- "SPRING_PROFILES_ACTIVE=default"
       #- SPRING_DATASOURCE_URL=jdbc:mysql://pokedex-mysql:3306/test
